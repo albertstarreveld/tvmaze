@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
+using Rtl.Data.Sql;
 using Rtl.Data.TvMaze;
 using Rtl.Data.TvMaze.Mapping;
 using Rtl.Data.TvMaze.Proxy;
+using Rtl.Services;
 
 namespace Rtl.Scraper
 {
@@ -15,14 +17,12 @@ namespace Rtl.Scraper
             
             while (true)
             {
-                // todo: do something with these hard coded values
-                var tvMaze = new AnnouncementRepository(new TvMazeProxy("http://api.tvmaze.com"));
-                var announcements = tvMaze.Get("US")
-                    .GetAwaiter()
-                    .GetResult();
-                
-                var database = new Rtl.Data.Sql.AnnouncementRepository(new SqlConnectionFactory());
-                database.Save(announcements)
+                var sqlConnectionFactory = new SqlConnectionFactory();
+                var tvMazeProxy = new TvMazeProxy("http://api.tvmaze.com");
+                var tvMaze = new TvMazeDownloadService(new TvMazeRepository(tvMazeProxy), new AnnouncementRepository(sqlConnectionFactory));
+
+                tvMaze
+                    .SynchronizeOurDatabase("US")
                     .GetAwaiter()
                     .GetResult();
             }

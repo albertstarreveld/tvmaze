@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rtl.Scraper", "Rtl.Scraper\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rtl.Domain", "Rtl.Domain\Rtl.Domain.csproj", "{1A2C1D88-984D-4783-AB46-FC44BAB88369}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.Data.Sql", "Rtl.Data.Sql\Rtl.Data.Sql.csproj", "{1652EDC3-ED94-433D-AC7D-D22838B2516B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rtl.Data.Sql", "Rtl.Data.Sql\Rtl.Data.Sql.csproj", "{1652EDC3-ED94-433D-AC7D-D22838B2516B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.Data.TvMaze", "Rtl.Data.TvMaze\Rtl.Data.TvMaze.csproj", "{10B591A6-95F2-4B5A-9F6D-00E9D6577086}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rtl.Data.TvMaze", "Rtl.Data.TvMaze\Rtl.Data.TvMaze.csproj", "{10B591A6-95F2-4B5A-9F6D-00E9D6577086}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.Services", "Rtl.Services\Rtl.Services.csproj", "{D2947C6F-D3A0-47AA-A912-2DB57E20BCCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rtl.Services.Test", "Rtl.Services.Test\Rtl.Services.Test.csproj", "{D3074A4F-E5B2-4509-901E-51ACA24DCDF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{10B591A6-95F2-4B5A-9F6D-00E9D6577086}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10B591A6-95F2-4B5A-9F6D-00E9D6577086}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10B591A6-95F2-4B5A-9F6D-00E9D6577086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2947C6F-D3A0-47AA-A912-2DB57E20BCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2947C6F-D3A0-47AA-A912-2DB57E20BCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2947C6F-D3A0-47AA-A912-2DB57E20BCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2947C6F-D3A0-47AA-A912-2DB57E20BCCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3074A4F-E5B2-4509-901E-51ACA24DCDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3074A4F-E5B2-4509-901E-51ACA24DCDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3074A4F-E5B2-4509-901E-51ACA24DCDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3074A4F-E5B2-4509-901E-51ACA24DCDF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

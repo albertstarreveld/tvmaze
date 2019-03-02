@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Rtl.Data.Sql;
 using Rtl.Domain;
+using Rtl.Services;
 
 namespace Rtl.Api.Controllers
 {
@@ -12,11 +13,11 @@ namespace Rtl.Api.Controllers
     [ApiController]
     public class ShowsController : ControllerBase
     {
-        private readonly IShowRepository _showRepository;
+        private readonly ITvGuideService _tvGuideService;
 
-        public ShowsController(IShowRepository showRepository)
+        public ShowsController(ITvGuideService tvGuideService)
         {
-            _showRepository = showRepository;
+            _tvGuideService = tvGuideService;
         }
 
         // todo: implement swagger
@@ -25,9 +26,7 @@ namespace Rtl.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Show>>> Get(int page = 1, int pageSize = 10)
         {
-            var result = await _showRepository.FindAll(pageSize, page);
-
-            return Ok(result);
+            return Ok(await _tvGuideService.ListShows(page, pageSize));
         }
     }
 }

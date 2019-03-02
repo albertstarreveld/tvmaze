@@ -6,10 +6,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Rtl.Data.Sql.Builders;
+using Rtl.Services;
 
 namespace Rtl.Data.Sql
 {
-    public class AnnouncementRepository
+    public class AnnouncementRepository : IAnnouncementRepository
     {
         private readonly SqlConnectionFactory _connectionFactory;
 

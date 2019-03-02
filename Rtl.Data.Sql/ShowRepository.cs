@@ -7,14 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Rtl.Data.Sql.Builders;
 using Rtl.Domain;
+using Rtl.Services;
 
 namespace Rtl.Data.Sql
 {
-    public interface IShowRepository
-    {
-        Task<IEnumerable<Show>> FindAll(int pageSize, int page);
-    }
-
     public class ShowRepository : IShowRepository
     {
         private readonly SqlConnectionFactory _connectionFactory;

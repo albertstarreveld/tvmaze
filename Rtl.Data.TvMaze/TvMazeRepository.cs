@@ -5,20 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Rtl.Data.TvMaze.Proxy;
+using Rtl.Services;
 using Announcement = Rtl.Domain.Announcement;
 
 namespace Rtl.Data.TvMaze
 {
-    public interface IAnnouncementRepository
-    {
-        Task<Announcement[]> Get(string country);
-    }
-
-    public class AnnouncementRepository : IAnnouncementRepository
+    public class TvMazeRepository : ITvMazeRepository
     {
         private readonly ITvMazeProxy _proxy;
 
-        public AnnouncementRepository(ITvMazeProxy proxy)
+        public TvMazeRepository(ITvMazeProxy proxy)
         {
             _proxy = proxy;
         }

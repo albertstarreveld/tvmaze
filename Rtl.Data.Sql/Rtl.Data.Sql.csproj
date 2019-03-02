@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rtl.Domain\Rtl.Domain.csproj" />
+    <ProjectReference Include="..\Rtl.Services\Rtl.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>

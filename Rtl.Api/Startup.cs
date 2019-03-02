@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Rtl.Data.Sql;
+using Rtl.Services;
 
 namespace Rtl.Api
 {
@@ -28,6 +29,7 @@ namespace Rtl.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddTransient<ITvGuideService, TvGuideService>();
             services.AddTransient<IShowRepository, ShowRepository>();
             services.AddTransient<Data.Sql.SqlConnectionFactory, SqlConnectionFactory>();
         }
