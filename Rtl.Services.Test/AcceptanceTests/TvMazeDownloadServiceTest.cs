@@ -22,7 +22,7 @@ namespace Rtl.Services.Test.AcceptanceTests
          *  Then the show details are stored in our database
          */
         [TestMethod]
-        public async Task IfGoedeTijdenOnTvMaze_ShouldSendGoedeTijdenToDatabase()
+        public async Task IfTvShowOnTvMaze_ShouldSendTvShowToDatabase()
         {
             // Arrange
             var announcement = _fixture.Create<Announcement>();
@@ -51,9 +51,9 @@ namespace Rtl.Services.Test.AcceptanceTests
             Assert.IsNotNull(actual);
         }
 
-        /* Given Albert Starreveld plays Ludo in a particular tv show
+        /* Given an actor plays a character in a particular tv show
          *  When our database is synchronized with theirs
-         *  Then Albert Starreveld will be listed in the cast of the show
+         *  Then the actors name will be listed in the cast of the show
          */
         [TestMethod]
         public async Task IfAlbertPlaysLudoInTvShow_ShouldListAlbertInTvShowCast()

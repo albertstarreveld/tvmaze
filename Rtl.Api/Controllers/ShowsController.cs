@@ -19,10 +19,8 @@ namespace Rtl.Api.Controllers
         {
             _tvGuideService = tvGuideService;
         }
-
-        // todo: implement swagger
-        // todo: make endpoint discoverable
-        // todo: need a waaaaay more flexible way to sort the results
+        
+        // todo: need a more flexible way to sort the results
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Show>>> Get(int page = 1, int pageSize = 10)
         {

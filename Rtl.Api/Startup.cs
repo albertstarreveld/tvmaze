@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Rtl.Data.Sql;
 using Rtl.Services;
+using NJsonSchema;
+using NSwag.AspNetCore;
 
 namespace Rtl.Api
 {
@@ -32,6 +34,11 @@ namespace Rtl.Api
             services.AddTransient<ITvGuideService, TvGuideService>();
             services.AddTransient<IShowRepository, ShowRepository>();
             services.AddTransient<Data.Sql.SqlConnectionFactory, SqlConnectionFactory>();
+
+            services.AddSwaggerDocument(x =>
+            {
+                x.PostProcess = c => { c.Info.Title = "Shows api"; };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +52,9 @@ namespace Rtl.Api
             {
                 app.UseHsts();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUi3();
 
             app.UseHttpsRedirection();
             app.UseMvc();
